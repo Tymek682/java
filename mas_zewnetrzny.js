@@ -1,0 +1,2 @@
+document.write("<strike>" + "ostatnia modyfikacja strony".fontcolor("teal").bold().fontsize(7)  + "<br>"+ "</strike>");
+document.write("<strike>" + document.lastModified .fontcolor("teal") + "</strike>");
