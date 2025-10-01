@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  
+  <meta charset="UTF-8">
+  <title>Maszk - Zadanie 14</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    h2 { color: darkblue; }
+    .wynik { margin-top: 20px; font-size: 20px; font-weight: bold; }
+    input, button { padding: 10px; margin: 5px; font-size: 16px; }
+    button { cursor: pointer; border-radius: 6px; }
+    button:hover { background: #ddd; }
+  </style>
+</head>
+<body>
+  
+  
+  <label for="m">m = </label>
+  <input type="number" id="m" min="2" value="4">
+  <button onclick="rozkład()">Oblicz</button>
+
+  <div class="wynik" id="wynik"></div>
+
+  <script>
+    function rozkład() {
+      let m = parseInt(document.getElementById("m").value);
+      let a = 1/m;
+
+     
+      let p = m + 1;
+      let q = m * (m + 1);
+
+      
+      let r = q + 1;
+      let s = q * (q + 1);
+
+      
+      let u1 = 1/p;
+      let u2 = 1/r;
+      let u3 = 1/s;
+
+      
+      let suma = u1 + u2 + u3;
+      let tekst = `
+        1/${m} = 1/${p} + 1/${r} + 1/${s}<br><br>
+        Sprawdzenie: 1/${m} = ${a.toFixed(6)}<br>
+        Suma rozkładu = ${suma.toFixed(6)}<br>
+        ${Math.abs(a - suma) < 0.000001 ? " Rozkład poprawny" : " Błąd"}
+      `;
+
+      document.getElementById("wynik").innerHTML = tekst;
+    }
+  </script>
+</body>
+</html>

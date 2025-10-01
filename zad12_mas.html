@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 12 – Maszk</title>
+  <script>
+    function obliczSekundy() {
+      let D1 = parseInt(document.getElementById("D1_mas").value);
+      let G1 = parseInt(document.getElementById("G1_mas").value);
+      let D2 = parseInt(document.getElementById("D2_mas").value);
+      let G2 = parseInt(document.getElementById("G2_mas").value);
+
+      
+      let godziny = (D1 * 24 + G1) - (D2 * 24 + G2);
+
+    
+      let sekundy = godziny * 3600;
+
+      document.getElementById("wynik").innerHTML = "Ilość sekund = " + sekundy + " sekund";
+    }
+  </script>
+</head>
+<body>
+  <h2 style="color:green;">Zadanie 12 – Maszk</h2>
+  
+  Podaj D1: <input type="number" id="D1_mas"><br>
+  Podaj G1: <input type="number" id="G1_mas"><br>
+  Podaj D2: <input type="number" id="D2_mas"><br>
+  Podaj G2: <input type="number" id="G2_mas"><br><br>
+
+  <button onclick="obliczSekundy()">Oblicz</button>
+  
+  <p id="wynik" style="color:green; font-size:30px;"></p>
+  
+</body>
+</html>
