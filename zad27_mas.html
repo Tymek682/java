@@ -1,37 +1,47 @@
-<!DOCTYPE html>   
-<head>    
-<title> proste obliczenia</title>    
-<meta charset="utf-8">   
-<script language="JavaScript"> 
-function kat(odl_mas,s_mas)
-{
-    c=parseFloat(odl_mas)
-    d=parseFloat(s_mas)
-    
-    var sinM=Math.sqrt((d*d)-(c*c))/d;
+<!DOCTYPE html>
+<html>
+<head>
+<title>Proste obliczenia</title>
+<meta charset="utf-8">
+<script>
+function kat(odl_mas, s_mas) {
+    let c = parseFloat(odl_mas);
+    let d = parseFloat(s_mas);
 
-    var tRad=Math.asin(sinM);
+    let sinM = Math.sqrt((d * d) - (c * c)) / d;
+    let tRad = Math.asin(sinM);
+    let aDeg = tRad * (180 / Math.PI);
 
-    var aDeg=trad*(180/Math.PI);
-    kat_mas=aDeg;
-
-    document.getElementsByName('kat_mas')[0].value=kat_mas.tofixed(2);
-    alert("kat="=kat_mas.tofixed(2));
-    pokaz1.inneHTML="kat="+kat_mas.tofixed(2)+"<br>";
+    let kat_mas = aDeg;
+    document.getElementsByName('kat_mas')[0].value = kat_mas.toFixed(2);
+    alert("Kąt = " + kat_mas.toFixed(2));
+    document.getElementById("pokaz1").innerHTML = "Kąt = " + kat_mas.toFixed(2) + "°";
 }
-function Wys(odl_mas,s_mas)
-{
-    c=parseFloat(odl_mas)
-    d=parseFloat(s_mas)
 
-    wys_mas=Math.sqrt((d*d)-(c*c));
-    document.getElementsByName('h_mas')[0].value=wys_mas.tofixed(2);
-    alert
+function Wys(odl_mas, s_mas) {
+    let c = parseFloat(odl_mas);
+    let d = parseFloat(s_mas);
+
+    let wys_mas = Math.sqrt((d * d) - (c * c));
+    document.getElementsByName('h_mas')[0].value = wys_mas.toFixed(2);
+    alert("Wysokość = " + wys_mas.toFixed(2));
 }
-</head>  
-<body> 
-<div style="color:red;font-size:50px;"> 
+</script>
+</head>
+<body style="font-size:20px; color:blue;">
+<h2>Proste obliczenia — Tymoteusz Maszk</h2>
 
-</div> 
-</body> 
-</html> 
+<form>
+    Długość przyprostokątnej (odl_mas): <input type="text" name="odl_mas"><br><br>
+    Długość przeciwprostokątnej (s_mas): <input type="text" name="s_mas"><br><br>
+
+    <input type="button" value="Oblicz kąt" onclick="kat(odl_mas.value, s_mas.value)">
+    <input type="button" value="Oblicz wysokość" onclick="Wys(odl_mas.value, s_mas.value)"><br><br>
+
+    Kąt: <input type="text" name="kat_mas" readonly><br><br>
+    Wysokość: <input type="text" name="h_mas" readonly><br><br>
+</form>
+
+<div id="pokaz1" style="color:red; font-size:24px;"></div>
+</body>
+</html>
