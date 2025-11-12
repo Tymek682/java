@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        function samo(marka_m,  kolor_m, typ_m, opona_m) {
+            this.marka = marka_m;
+            this.kolor = kolor_m;
+            this.typ = typ_m;
+            this.opona = opona_m;
+        }
+        samo.prototype.wypisz = function ()
+ {
+ alert(this.marka + ' ' + this.kolor+ ' ' + this.typ+ ' ' + this.opona);
+ }
+        let samochod1 = new samo("marcedes", "czerwony", "zimowa" );
+        let samochod2 = new samo("audi", "niebieski", "letnia");
+        let samochod3 = new samo("mazda", "zolty", "calosezonowka");
+        samochod1.opona ="przedziurwiona";
+        samochod2.opona ="ukradli";
+        samochod3.opona ="spalona";
+
+        samochod1.wypisz();
+        samochod2.wypisz();
+        samochod3.wypisz();
+
+        document.write("dostęp do właściwości"+"<br>");
+        document.write("pierwszy samochod"+" "+samochod1.marka+" "+samochod1.kolor+" "+samochod1.typ+" "+samochod2.opona+"<br>");
+        document.write("drugi samochod"+" "+samochod2.marka+" "+samochod2.kolor+" "+samochod2.typ+" "+samochod2.opona+"<br>");
+        document.write("trzeci samochod"+" "+samochod3.marka+" "+samochod3.kolor+" "+samochod3.typ+" "+samochod3.opona+" ");
+  </script>
+</body>
+<br>
+ programowanie obiektowe 
+</html>

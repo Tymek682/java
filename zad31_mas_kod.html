@@ -1,0 +1,35 @@
+
+<textarea name="nazwa" cols="90" rows="40" readonly>
+  <html> 
+     <head> 
+           <script type="text/javascript"> 
+ 
+                    var samochod = { 
+   kolor: 'czerwone', 
+   marka: 'mercedes', 
+   typ: 'sportowe', 
+   opona: ' opona zimowa',
+   pokaz: function () 
+     { 
+        document.write(this.kolor + ' ' + this.marka + ' ' + this.typ+' ' + this.opona) 
+     } 
+  } 
+  samochod.pokaz(); 
+  samochod.marka=mercedes; 
+  samochod.wypisz=function() {alert('typ opony: ' + this.opona )} 
+  samochod.wypisz(); 
+            </script> 
+     </head> 
+<body> 
+ <br> 
+   Programowanie obiektowe. <br> 
+     Obiekt  to  samochod<br> 
+     Pola:<br> 
+     kolor<br> 
+     marka<br> 
+     typ<br> 
+     metoda :  pokaz<br> 
+     nowe pole to typ opony <br> 
+     nowa metoda to wypisz();<br> 
+</body> 
+</html>

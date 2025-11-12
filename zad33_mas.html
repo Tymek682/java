@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Prosty system logowania</title>
+ 
+</head>
+<body>
+
+  <h2>Logowanie</h2>
+
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="E-mail" >
+    <input type="haslo" id="haslo" placeholder="Hasło" >
+    <button type="submit">Zaloguj</button>
+  </form>
+
+  <div class="wyni" id="wyni"></div>
+
+  <script>
+
+    function User(email, haslo, avatarUrl) {
+      this.email = email;
+      this.haslo = haslo;
+      this.avatarUrl = avatarUrl;
+    }
+
+ 
+    const userList = {
+      users: [],
+
+      addUser(user) {
+        this.users.push(user);
+      },
+
+      login(email, haslo) {
+        return this.users.some(u => u.email === email && u.haslo === haslo);
+      }
+    };
+
+    userList.addUser(new User("grusza@gmail.com", "1111", "https://example.com/avdatar1.png"));
+    userList.addUser(new User("jablko@gmai.com", "haslo", "https://example.com/avatar2.png"));
+
+    
+    const form = document.getElementById("loginForm");
+    const wyni = document.getElementById("wyni");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const haslo = document.getElementById("haslo").value;
+
+      const zalogowany = userList.login(email, haslo);
+
+      if (zalogowany) {
+        wyni.textContent = "Zalogowano pomyślnie!";
+        wyni.style.color = "green";
+      } else {
+        wyni.textContent = "Nieprawidłowe dane logowania.";
+        wyni.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
