@@ -1,0 +1,24 @@
+<textarea name="nazwa" cols="90" rows="40" readonly>
+<html> 
+    <head>
+        <meta charset="utf-8">
+    </head>
+ <body> 
+  <h1 style=color:green  >MENU</h1><br>
+  <br>
+  <h1 style=color:red  >1-CZERWONY</h1>
+  
+  <h1 style=color:blue  >2-NIEBIESKI</h1>
+<input type="button" name="nazwisko_ucznia" value="Oblicz" onclick="fun_mas()" /> 
+  <script> 
+    function fun_mas() { 
+      var x_mas = prompt("Podaj kolor", ""); 
+        if(x_mas == 1 || x_mas.toLowerCase() == "czerwony") { 
+  document.write('<font color=red size=7>wczytałeś kolor czerwony</font><br>'); } 
+        else if(x_mas == 2 || x_mas.toLowerCase() == "nibieski") { 
+  document.write('<font color=blue size=1>wczytałeś kolor niebieski</font><br>'); 
+  } 
+  } 
+ </script> 
+  </body> 
+</html>

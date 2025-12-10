@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        pre {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>Prostokąt z gwiazdek o wymiarach: a = 6, b = 23</p>
+    
+    <pre id="prostokat"></pre>
+    
+    <script>
+        // ...existing code...
+        function rysujProstokat(a_mas, b_mas) {
+            let output = '';
+
+            // górna krawędź
+            for (let i_mas = 0; i_mas < b_mas; i_mas++) {
+                output += '*';
+            }
+            output += '\n';
+
+            // środek (jedna pętla, bez wewnętrznej pętli dzięki repeat)
+            const srodekSpacje = ' '.repeat(Math.max(0, b_mas - 2));
+            for (let i_mas = 0; i_mas < Math.max(0, a_mas - 2); i_mas++) {
+                if (b_mas === 1) {
+                    output += '*\n';
+                } else {
+                    output += '*' + srodekSpacje + '*\n';
+                }
+            }
+
+            // dolna krawędź
+            if (a_mas > 1) {
+                for (let i_mas = 0; i_mas < b_mas; i_mas++) {
+                    output += '*';
+                }
+            }
+
+            document.getElementById("prostokat").textContent = output;
+        }
+
+        // ...existing code...
+        rysujProstokat(6, 23);
+    </script>
+</body>
+</html>

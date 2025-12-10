@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html lang="pl"> 
+<head> 
+ <title>Zadanie JavaScript</title> 
+ <meta charset="utf-8"> 
+ <style> 
+  h1 { text-transform: uppercase; } 
+  
+ </style> 
+</head> 
+<body> 
+ 
+ <h1>Proste działania</h1> 
+ <h2>Maszk klasa 2p</h2> 
+ <label for="a">Podaj pierwszą liczbę:</label> <input type="number" id="a"> 
+ <br><br> 
+ <label for="b">Podaj drugą liczbę:</label> <input type="number" id="b"> 
+ <br><br> 
+ <input type="button" value="DODAWANIE" onclick="suma_mas()"> 
+ <input type="button" value="ODEJMOWANIE" onclick="roznica_mas()"> 
+ <input type="button" value="MNOŻENIE" onclick="iloczyn_mas()"> 
+ <input type="button" value="DZIELENIE" onclick="iloraz_mas()"> 
+  <input type="button" value="teoria_mas" onclick="teoria_mas()"> 
+ <div id="wynik" style="margin-top:20px;"></div> 
+ <script> 
+  function suma_mas() 
+  { 
+   var a = document.getElementById("a").value; 
+   var b = document.getElementById("b").value; 
+   if (a == "" || b == "") 
+   { 
+   document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby."; 
+   } else 
+   { 
+    a = parseFloat(a); 
+    b = parseFloat(b); 
+    var suma_mas = a + b; 
+  document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + suma_mas; 
+   } 
+   //alert(a); 
+   //console.log(a); 
+  } 
+  function roznica_mas() 
+  { 
+   var a = document.getElementById("a").value; 
+   var b = document.getElementById("b").value; 
+   if (a == "" || b == "") 
+   { 
+  document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby."; 
+   } else 
+   { 
+    a = parseFloat(a); 
+    b = parseFloat(b); 
+    var roznica_mas = a - b; 
+  document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + roznica_mas; 
+   } 
+  }  
+   function iloczyn_mas() 
+  { 
+   var a = document.getElementById("a").value; 
+   var b = document.getElementById("b").value; 
+   if (a == "" || b == "") 
+   { 
+   document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby."; 
+   } else 
+   { 
+    a = parseFloat(a); 
+    b = parseFloat(b); 
+    var iloczyn_mas = a * b; 
+  document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + iloczyn_mas; 
+   } 
+   //alert(a); 
+   //console.log(a); 
+  } 
+   function iloraz_mas() 
+  { 
+   var a = document.getElementById("a").value; 
+   var b = document.getElementById("b").value; 
+   if (a == "" || b == "") 
+   { 
+   document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby."; 
+   } 
+   if (a=="0" || b=="0")
+   {
+    document.getElementById("wynik").innerHTML = "nie mozna dzielic przez zero."; 
+   } else
+   { 
+    a = parseFloat(a); 
+    b = parseFloat(b); 
+    var iloraz_mas = a / b; 
+  document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + iloraz_mas; 
+   } 
+   //alert(a); 
+   //console.log(a); 
+  } 
+      function teoria_mas() 
+{ 
+document.write("<font color=green size=4>pierwsza linia teorii</font>"+"<br>"); 
+document.write("<font color=red size=4>&lt;</font>"+"<font color=red size=4>label for=</font>"+"<font color=red size=4>&quot;</font>"); 
+document.write("<font color=red size=4>a</font>"+"<font color=red size=4>&quot;</font>"+"<font color=red size=4>&gt;</font>"); 
+document.write("<font color=red size=4>Podaj pierwszą liczbę:</font>"); 
+document.write("<font color=red size=4>&lt;</font>"+"<font color=red size=4>/label</font>"+"<font color=red size=4>&gt;</font>"); 
+document.write("<font color=red size=4>&lt;</font>"+"<font color=red size=4>input type=</font>"+"<font color=red size=4>&quot;</font>"); 
+document.write("<font color=red size=4>number</font>"+"<font color=red size=4>&quot;</font>"); 
+document.write("<font color=red size=4> id=</font>"+"<font color=red size=4>&quot;</font>"); 
+document.write("<font color=red size=4>a</font>"+"<font color=red size=4>&quot;</font>"+"<font color=red size=4>&gt;</font>"+"<br>"); 
+document.write("<font color=green size=4>wytłumaczenia</font>"+"<br>"); 
+document.write("<font color=red size=4>wykonanie numerycznego pola formularza z opisem 'Podaj pierwszą liczbę:' a nazwa pola to 'a' </font>"+"<br>"); 
+} 
+  </script>
+</body>
+</html>

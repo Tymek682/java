@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        pre {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    
+    <pre id="prostokat"></pre>
+    
+    <script>
+        function rysujProstokat(a_mas, b_mas) {
+            let output = '';
+            
+            
+            for (let i_mas = 0; i_mas < b_mas; i_mas++) {
+                output += '*';
+            }
+            output += '\n';
+            
+            
+            for (let i_mas = 0; i_mas < a_mas - 2; i_mas++) {
+                output += '*';
+                for (let j_mas = 0; j_mas < b_mas - 2; j_mas++) {
+                    output += ' ';
+                }
+                output += '*\n';
+            }
+            
+            
+            for (let i_mas = 0; i_mas < b_mas; i_mas++) {
+                output += '*';
+            }
+            
+            document.getElementById("prostokat").textContent = output;
+        }
+
+      
+        let imie = prompt("Podaj imię:");
+        let nazwisko = prompt("Podaj nazwisko:");
+
+      
+        let a = (nazwisko.length % 4) + 5;
+        let b = (imie.length % 6) + 20;
+
+      
+        rysujProstokat(a, b);
+
+    </script>
+</body>
+</html>

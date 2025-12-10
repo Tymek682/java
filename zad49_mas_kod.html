@@ -1,0 +1,27 @@
+<textarea name="nazwa" cols="90" rows="40" readonly>
+<!DOCTYPE html>   
+<head>    
+
+<meta charset="utf-8">   
+</head>  
+<body> 
+<div style="color:red;font-size:50px;"> 
+<script language="JavaScript"> 
+do { 
+var liczba1=prompt("n="," "); 
+var n_mas=parseFloat(liczba1); 
+} 
+while  (n_mas<0);
+if(n_mas==0) {
+    silnia_mas=1;
+}
+if(n_mas>0) {
+    silnia_mas=1;
+    for(i_mas=1;i_mas<-n_mas;i_mas++){
+        silnia_mas=silnia_mas*i_mas;
+    }
+ } document.write("n="+n_mas+"<br>"+n_mas+"!="+silnia_mas);
+</script> 
+</div> 
+</body> 
+</html>

@@ -1,0 +1,32 @@
+
+<html> 
+<body> 
+<div style="color:red;font-size:50px;">
+    <button id="parzyste">Podaj liczbę</button>
+  
+    <pre id="output"></pre>
+    
+    <script>
+        function wypiszParzyste() {
+            let i_mas = parseInt(prompt("Podaj liczbę:"));
+            
+            if (isNaN(i_mas) || i_mas < 2) {
+                alert("liczba musi byc wieksza od 2");
+                return;
+            }
+
+            let output = '';
+            
+            for (let koniec_petli_mas = 2; koniec_petli_mas <= i_mas; koniec_petli_mas += 2) {
+                output += koniec_petli_mas + " ";
+            }
+
+            document.getElementById("output").textContent = output;
+        }
+
+        document.getElementById("parzyste").addEventListener("click", wypiszParzyste);; 
+
+</script> 
+</div> 
+</body> 
+</html>
